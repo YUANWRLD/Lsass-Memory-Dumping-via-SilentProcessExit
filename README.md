@@ -104,7 +104,7 @@ LsassSilentProcessExitDump2: Call CreateRemoteThread with RtlReportSilentProcess
             LsassSilentProcessExitDump.exe <lsass.exe pid>
             ```
         
-        - Result：When calling `RtlReportSilentProcessExit` on the LSASS process handle, not only is the memory of `lsass.exe` dumped, but the memory of the external process that triggered the behavior (`LsassSilentProcessExitDump.exe`) is also dumped
+        - Result: When calling `RtlReportSilentProcessExit` on the LSASS process handle, not only is the memory of `lsass.exe` dumped, but the memory of the external process that triggered the behavior (`LsassSilentProcessExitDump.exe`) is also dumped
         
             ![image](./results/Call_RtlReportSilentProcessExit_on_LSASS_process_handle_1.png)
             
@@ -118,7 +118,7 @@ LsassSilentProcessExitDump2: Call CreateRemoteThread with RtlReportSilentProcess
             LsassSilentProcessExitDump2.exe <lsass.exe pid>
             ```
     
-        - Result：When `RtlReportSilentProcessExit` is invoked within the LSASS process context via CreateRemoteThread, the generated dump contains only the memory of the `lsass.exe` process itself
+        - Result: When `RtlReportSilentProcessExit` is invoked within the LSASS process context via CreateRemoteThread, the generated dump contains only the memory of the `lsass.exe` process itself
         
             ![image](./results/Call_CreateRemoteThread_with_RtlReportSilentProcessExit_on_LSASS_1.png)
             
@@ -138,4 +138,4 @@ LsassSilentProcessExitDump2: Call CreateRemoteThread with RtlReportSilentProcess
         reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\lsass.exe" /f
         ```
 
-> Important: This lab is for learning and testing only on this local/isolated environment. Do not run it against systems you do not own or have explicit permission to test.
+> Important: This lab is for learning and testing only on the local/isolated environment. Do not run it against systems you do not own or have explicit permission to test.
